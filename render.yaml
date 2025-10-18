@@ -1,3 +1,4 @@
+version: "1"
 services:
   - type: web
     name: n8n
@@ -13,30 +14,30 @@ services:
       - key: N8N_PORT
         value: 5678
       - key: N8N_BASIC_AUTH_ACTIVE
-        value: true
-      - key: N8N_BASIC_AUTH_USER
-        sync: false
-      - key: N8N_BASIC_AUTH_PASSWORD
-        sync: false
-      - key: N8N_ENCRYPTION_KEY
-        sync: false
+        value: false
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_USER_FOLDER
         value: /home/node/.n8n
       - key: GENERIC_TIMEZONE
         value: America/Bogota
-      - key: OLLAMA_URL
+      - key: OLLAMA_HOST
         fromService:
           type: web
           name: ollama
-          property: url
+          property: host
+      - key: OLLAMA_PORT
+        fromService:
+          type: web
+          name: ollama
+          property: port
+      - key: OLLAMA_URL
+        value: "http://ollama:11434"
 
   - type: web
     name: ollama
     env: docker
     plan: starter
-    dockerCommand: ""
     disk:
       name: ollama_models
       mountPath: /root/.ollama
