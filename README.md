@@ -13,25 +13,7 @@ Este proyecto permite desplegar **n8n** y **Ollama** en [Render.com](https://ren
 
 ---
 
-## 🚀 Despliegue en Render
-
-1. Crea una cuenta en [Render.com](https://render.com).
-2. Sube este proyecto a GitHub o GitLab.
-3. En Render Dashboard → **New + → Blueprint**.
-4. Selecciona este repositorio (Render detectará el archivo `render.yaml`).
-5. Configura tus variables de entorno cuando Render lo solicite:
-   - `N8N_BASIC_AUTH_USER`
-   - `N8N_BASIC_AUTH_PASSWORD`
-   - `N8N_ENCRYPTION_KEY`
-6. Espera a que Render cree ambos servicios (`n8n` y `ollama`).
-
-✅ Una vez desplegado:
-- Accede a `https://n8n.onrender.com`
-- Ollama responderá desde `https://ollama.onrender.com`
-
----
-
-## 🧠 Uso local (opcional)
+## 🧠 Uso local
 
 Si quieres probarlo antes:
 
@@ -60,7 +42,6 @@ Render mantiene datos entre reinicios gracias a los discos definidos en `render.
 
 * **n8n:** Automatización de workflows.
 * **Ollama:** Modelos de lenguaje locales.
-* **Docker Compose / Render Blueprint:** Orquestación simple y moderna.
 
 ---
 
